@@ -1,8 +1,10 @@
+# Note: Ubuntu is being used due to familiarity only
 FROM ubuntu:18.04
 
 
 USER root
 
+# Julia install dependencies and Python development
 RUN apt-get update && apt-get install -yq --no-install-recommends \
     wget \
     ca-certificates \
