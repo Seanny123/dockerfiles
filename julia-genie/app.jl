@@ -19,6 +19,4 @@ route("/") do
     "root"
 end
 
-Genie.AppServer.startup(8080)
-
-Base.JLOptions().isinteractive == 0 && wait()
+Genie.AppServer.startup(8080, "0.0.0.0", async=true)
