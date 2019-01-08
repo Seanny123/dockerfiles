@@ -1,6 +1,8 @@
 # Note: Ubuntu is being used due to familiarity only
 FROM ubuntu:18.04
 
+COPY . /app
+WORKDIR /app
 
 USER root
 
@@ -34,3 +36,6 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
 # Install PyJulia
 RUN python3 -m pip install julia && \
     python-jl --version
+
+# Use the command python-jl, because finding the julia install is hard
+CMD ["python-jl", "app.py"]
